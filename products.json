@@ -1,2 +1,60 @@
-{"channel":"family-table-farms","schema":"months keyed YYYY-MM","default":{"free":"Pig Batch Profit Planner (7-page printable)","free_url":"free/","paid":null},
-"months":{"2026-11":{"free":"Pig Batch Profit Planner","free_url":"free/","paid":null},"2026-12":{"free":"Pig Batch Profit Planner","free_url":"free/","paid":null}}}
+{
+ "channel": "family-table-farms",
+ "schema": "months keyed YYYY-MM",
+ "default": {
+  "free": "Pig Batch Profit Planner (7-page printable)",
+  "free_url": "free/",
+  "paid": "plans/"
+ },
+ "months": {
+  "2026-11": {
+   "free": "Pig Batch Profit Planner",
+   "free_url": "free/",
+   "paid": "plans/"
+  },
+  "2026-12": {
+   "free": "Pig Batch Profit Planner",
+   "free_url": "free/",
+   "paid": "plans/"
+  }
+ },
+ "lead_magnets": [
+  {
+   "name": "Free 3-Acre Zone Map",
+   "url": "plans/#free",
+   "file": "free/3-acre-zone-map.pdf"
+  }
+ ],
+ "plans": [
+  {
+   "id": "ftf-bundle",
+   "price_usd": 39.0,
+   "buy": "https://buy.stripe.com/5kQ9ATd6Abtqew23362Ji2S"
+  },
+  {
+   "id": "ftf-3acre",
+   "price_usd": 19.0,
+   "buy": "https://buy.stripe.com/5kQ4gz1nS7dacnUcDG2Ji2O"
+  },
+  {
+   "id": "ftf-feedstore",
+   "price_usd": 12.0,
+   "buy": "https://buy.stripe.com/28E28rd6A2WUfA6cDG2Ji2P"
+  },
+  {
+   "id": "ftf-offgrid",
+   "price_usd": 14.0,
+   "buy": "https://buy.stripe.com/9B66oH4A4gNKfA66fi2Ji2Q"
+  },
+  {
+   "id": "ftf-records",
+   "price_usd": 9.0,
+   "buy": "https://buy.stripe.com/7sY4gz5E8cxu73A9ru2Ji2R"
+  }
+ ],
+ "promo": {
+  "code": "FARMLAUNCH",
+  "percent_off": 20,
+  "until": "2026-12-31T23:59:00-05:00"
+ }
+}
