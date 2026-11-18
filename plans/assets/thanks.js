@@ -20,13 +20,8 @@ function claim(body,tries){
     if(x.s===200)return render(x.j);
     if(x.s===402&&tries<6){msg('Waiting for your bank to confirm the payment…');return setTimeout(function(){claim(body,tries+1)},2500)}
     if(x.s===429){msg('Too many attempts. Please wait a minute and refresh.');return}
-    msg(x.s===402?'Your payment is still processing. We will email your link as soon as it clears.':'We couldn\'t open this purchase from this link. Use the resend form below, or email us with your receipt.');
-  }).catch(function(){if(tries<3)return setTimeout(function(){claim(body,tries+1)},2000);msg('Connection problem. Refresh this page, or use the resend form below.')});
+    msg(x.s===402?'Your payment is still processing. Refresh this page in a few minutes. Still stuck? Email pnsgloballlc@gmail.com with your receipt.':'We couldn\'t open this purchase from this link. Email pnsgloballlc@gmail.com with your receipt.');
+  }).catch(function(){if(tries<3)return setTimeout(function(){claim(body,tries+1)},2000);msg('Connection problem. Refresh this page, or email pnsgloballlc@gmail.com with your receipt.')});
 }
-if(sid&&SID.test(sid))claim({session_id:sid},0);else if(a&&TOK.test(a))claim({a:a},0);else msg('Open the link from your purchase or your email, or request it again below.');
-document.getElementById('rf').addEventListener('submit',function(ev){ev.preventDefault();var em=document.getElementById('em').value.trim(),rs=document.getElementById('rs');
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){rs.textContent='Please enter a valid email.';return}
-  rs.textContent='Sending…';fetch(PG+'/api/resend',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:em})})
-  .then(function(r){rs.textContent=r.status===429?'Please wait a minute before trying again.':'If that email has a purchase, a new link is on its way. Check your inbox and spam folder.'})
-  .catch(function(){rs.textContent='Connection problem. Please try again.'})});
+if(sid&&SID.test(sid))claim({session_id:sid},0);else if(a&&TOK.test(a))claim({a:a},0);else msg('Open this page from your purchase or your bookmarked link. Lost it? Email pnsgloballlc@gmail.com with your receipt.');
 })();
